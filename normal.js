@@ -8,8 +8,9 @@
 // 1.
 // Should always return the value 5
 
-function giveMeFive() {
 
+function giveMeFive() {
+  return 5;
 }
 
 //---------
@@ -19,8 +20,8 @@ function giveMeFive() {
 // and return the exact same thing. This type
 // of function is called a no-op as in (no operation)
 
-function noOp() {
-
+function noOp(sameThing) {
+  return (sameThing);
 }
 
 //---------
@@ -31,8 +32,8 @@ function noOp() {
 // it should return a number twice the size as the number
 // that is passed in.
 
-function double() {
-
+function double(dub) {
+  return (dub * 2)
 }
 
 //---------
@@ -42,8 +43,8 @@ function double() {
 // It should return the number squared. Squared meaning
 // it should return the number multiplied by itself.
 
-function square() {
-
+function square(para) {
+  return (para * para)
 }
 
 //---------
@@ -54,9 +55,17 @@ function square() {
 // of all the numbers in the array added together)
 // and return it.
 
-function sum() {
+function sum(numbeRay) {
+    
+    var tot = 0;
 
+    for (var i = 0; i < numbeRay.length; i++) {
+        tot += numbeRay[i];
+    }
+    return tot;
 }
+
+
 
 //---------
 
@@ -70,6 +79,8 @@ function sum() {
 // HINT: use an array and a for loop
 
 function letterIndex() {
+
+var letter
 
 }
 
