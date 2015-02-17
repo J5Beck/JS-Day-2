@@ -78,9 +78,39 @@ function sum(numbeRay) {
 
 // HINT: use an array and a for loop
 
-function letterIndex() {
+function letterIndex(myLtr) {
+  var myLtr, alphaArray
 
-var letter
+  alphaArray = { 
+    "A" : 1, 
+    "B" : 2, 
+    "C" : 3, 
+    "D" : 4, 
+    "E" : 5,
+    "F" : 6, 
+    "G" : 7, 
+    "H" : 8, 
+    "I" : 9, 
+    "J" : 10, 
+    "K" : 11, 
+    "L" : 12, 
+    "M" : 13, 
+    "N" : 14, 
+    "O" : 15, 
+    "P" : 16, 
+    "Q" : 17, 
+    "R" : 18, 
+    "S" : 19, 
+    "T" : 20, 
+    "U" : 21, 
+    "V" : 22, 
+    "W" : 23, 
+    "X" : 24, 
+    "Y" : 25, 
+    "Z" : 26,
+  };
+
+  return alphaArray[myLtr.toUpperCase()];
 
 }
 
@@ -98,7 +128,13 @@ var letter
 
 // HINT: use an array and the modulo (%) operator
 
-function reverseLetterIndex() {
+function reverseLetterIndex(myNum) {
+  
+  var alphaArray, myNum
+  var alphaArray = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
+                      "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ];
+
+  return alphaArray[(myNum - 1) % alphaArray.length];
 
 }
 
@@ -114,6 +150,33 @@ function reverseLetterIndex() {
 
 // HINT: use the previous 2 functions
 
-function rot13() {
+function rot13(givenString) {
+  var newSentenceArray, words, myLettersArray, newInt, newNum, cipherString
 
+  function letters() {
+
+    myLettersArray = words[i].split("");
+
+      for (newInt = 0; newInt < myLettersArray.length; newInt++ ) {
+
+        newNum = (letterIndex(myLettersArray[newInt]) + 13);
+
+        newSentenceArray.push(reverseLetterIndex(newNum));
+      }
+   }
+
+  newSentenceArray = [];
+
+  words = givenString.split(" ");
+
+    for (i = 0; i < words.length; i++ ) {
+  
+      letters();
+
+      newSentenceArray.push(" ");
+    }
+      
+  cipherString = newSentenceArray.join("");
+
+  return cipherString.trim();
 }
